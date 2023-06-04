@@ -1,0 +1,36 @@
+﻿<Window x:Class="WpfApp1.Forms.ChooseBookWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1.Forms"
+        mc:Ignorable="d"
+        Title="Выбор адреснрй книги" Height="300" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Выберите адресную книгу:" HorizontalAlignment="Center" FontSize="15" />
+        <Border Width="350" Height="170" Margin="0,30,0,0">
+            <ListBox Grid.Row="0" ItemsSource="{Binding AllBook}" SelectedItem="{Binding AdressBook}" x:Name="ListBook">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Name}" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        </Border>
+
+
+
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" >
+            <Button x:Name="btn_add" Margin="10, 0, 10, 0" Width="100" Height="30" Content="Добавить" Click="btn_add_Click"/>
+            <Button x:Name="btn_edit" Margin="0,0,10,0" Width="100" Height="30" Content="Редактировать" Click="btn_edit_Click"/>
+            <Button x:Name="btn_dlt" Margin="0,0,10,0" Width="100" Height="30" Content="Удалить" Click="btn_dlt_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

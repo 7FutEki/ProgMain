@@ -1,0 +1,36 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="500"
+        
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent">
+    <Border CornerRadius="10" Background="White" BorderBrush="Gray" BorderThickness="0.5">
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="Transparent" >
+                <Image Source="C:\Users\User\source\repos\WpfApp1\WpfApp1\Img\png-transparent-computer-icons-logo-feather-logo-leaf-photography-logo.png" HorizontalAlignment="Left"/>
+                <TextBlock Text="Создание новой адресной книги" FontFamily="Arial" FontSize="20" TextAlignment="Left" VerticalAlignment="Center" Margin="30, 0,0,0"/>
+                    <Button x:Name="btn_exit" Click="btn_exit_Click" Content="✕" FontSize="20" FontWeight="Bold" Background="Red" Height="30" Width="30" Margin="470, 0,0,0" Cursor="Hand" />
+                    <Button x:Name="btn_rollup" Click="btn_rollup_Click" Content="🗕" FontSize="20"  Background="Gray" Height="30" Width="30" Margin="440,0,29,0" Cursor="Hand" />
+            </Grid>
+            <StackPanel Grid.Row="1" >
+                <TextBlock Text="Введите название адресной книги:" HorizontalAlignment="Center" Margin="0, 40, 0,0" FontSize="20"/>
+                <TextBox x:Name="tb_name" HorizontalAlignment="Center" Text="{Binding Name}"  Height="30" Width="400" Margin="0,20,0,0"/>
+                <Button x:Name="btn_cancel" Click="btn_cancel_Click" Content="Отмена" HorizontalAlignment="Left" Width="100" Height="30" FontSize="15" Margin="50,50,0,0"/>
+                <Button x:Name="btn_create" Click="btn_create_Click" Content="Создать" HorizontalAlignment="Right" Width="100" Height="30" FontSize="15" Margin="0,-30,50,0"/>
+            </StackPanel>
+
+        </Grid>
+    </Border>
+</Window>
